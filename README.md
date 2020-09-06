@@ -39,7 +39,7 @@
 
 #### 구상도 
 
-
+<img src="https://user-images.githubusercontent.com/62593236/92330566-d6f97280-f0aa-11ea-99cc-64b3d537cc5f.png" width="90%"></img>
 
 
 * 문제점 : 취지나 아이디어는 좋으나 프로젝트의 난이도가 쉬운 것 같음. 좀 더 난이도 있게 하고싶은 아쉬움이 남음.
