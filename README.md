@@ -32,7 +32,9 @@
 
 ### 회의과정
 
+<img src="https://user-images.githubusercontent.com/62593236/92319405-bb627d80-f052-11ea-8499-92e8e4e24914.png" width="90%"></img>
 
+회의는 디스코드 프로그램 사용.
 
 
 
