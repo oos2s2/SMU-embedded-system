@@ -23,8 +23,14 @@
 따라서 홈케어 기반 임베디드 시스템에 대한 자료조사 시작
 
 [제17회 임베디드SW경진대회 개발완료보고서 '스마트 홈'](http://eswcontest.or.kr/bbs/board.php?tbl=award&mode=VIEW&num=359&chr=&category=2019%EB%85%84&findType=&findWord=&sort1=&sort2=&page=1)
+[라즈베리파이를 이용한 스마트홈 및 원격관리 어플리케이션](https://1d1cblog.tistory.com/m/45)
+[와이프를 위한 스마트홈 만들기, 매직미러!](https://youtu.be/0h0ULAXlm7w)
+[라즈베리파이IoT 딥러닝 Computer Vision프로젝트](https://www.youtube.com/watch?v=6oBZPW8spgA)
+[라즈베리파이를 이용한 홈케어디바디으 '우렁케어'](https://github.com/wjrmffldrhrl/UleungCare)
 
 ### 주제선정
+
+### 회의과정
 
 
 
