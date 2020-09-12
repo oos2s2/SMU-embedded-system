@@ -62,7 +62,49 @@
 <img src="https://user-images.githubusercontent.com/62593236/92319405-bb627d80-f052-11ea-8499-92e8e4e24914.png" width="90%"></img>
 
 
+## 2주차 팀 활동 보고서
+-역할 분담 : 이채린 – 발표 영상 편집, 이예림 – 자료조사 및 깃 허브 작성, 임진선 – 발표 영상 녹음, 김현승 – 자료조사 및 깃 허브 작성, 강정연 – 자료조사 및 깃 허브 작성 .
+
+### 주제 선정
+1주차에서 나온 얼굴인식 기반 커피머신 아이디어에서 기술적인 어려움과 구체적인 아이디어 구상에서 어려움을 겪어 이와 비슷한 새로운 아이디어 구상.
+
+1번째 주제 : 1차 회의에서는 딥러닝을 기반으로 한 카메라로 사람 얼굴을 인식해 표정과 감정을 데이터로 받아들여 라즈베리파이로 데이터를 각각 분석해 그에 맞는 음료를 추천 및 뽑아주는 임베디드 시스템 설계. 음료 제작 기계는 아두이노를 사용해서 제작
+
+구상도 
+
+<img src="https://user-images.githubusercontent.com/70967826/93000087-e1ab8000-f560-11ea-87fd-2e28bfa5ca1a.png" width=70%></img>
+
+### 자료 조사 
+
+[파이썬 강좌 – 딥러닝으로 표정 인식하기](https://m.blog.naver.com/roboholic84/221633210887)
+[얼굴 표정인식을 통한 사용자 감정 케어](https://ausome.tistory.com/6)
+[라즈베리파이를 이용한 칵테일 제조기 알콜램프](https://youtu.be/WO7iVxId79U)
+[라즈베리파이를 이용한 칵테일 제조기 알콜램프](http://eswcontest.or.kr/bbs/download.php?tbl=award&no=1411)
+
+### 문제점
+카메라로 사람 얼굴을 인식한 뒤 딥러닝을 통한 표정 인식 과정에서 다양한 표정을 성공적으로 데이터화 하는 기술의 성공가능성에 대한 의문점을 가짐. 
+
+2번째 주제 : 라즈베리파이를 이용해 취향과 기호에 맞게 음료를 제조할 수 있는 기계와 그 기계를 직접 제어할 수 있는 어플리케이션 제작. 추가로 단순 음료 제조뿐만 아니라 원하는 레시피를 직접 입력하는 기능이나 원하는 시간에 맞춰 음료를 제조할 수 있는 예약 기능 등과 같은 기능 추가
+
+구상도 
+
+<img src="https://user-images.githubusercontent.com/70967826/93000083-dd7f6280-f560-11ea-96bb-edbb70e09a47.png" width=70%></img>
+<img src="https://user-images.githubusercontent.com/70967826/93000085-e112e980-f560-11ea-874e-89cb617a038d.png" width=70%></img>
+<img src="https://user-images.githubusercontent.com/70967826/93000086-e112e980-f560-11ea-921c-80cf74452647.png" width=70%></img>
+
+### 자료 조사 
+
+[라즈베리파이와 어플을 이용한 임베디드 시리얼 제조기](https://www.youtube.com/watch?v=iAL7O1oMXZU&feature=youtu.be)
+[라즈베리파이 서브모터 음료 디스펜서](https://www.youtube.com/watch?v=Va_HRMmJt-g)
+[Rasberry Pi Smart Bartender](https://youtu.be/2DopvpNF7J4)
+[라즈베리파이 컨트롤러 자동 드링크 바텐더 분배]https://ko.howtodogood.com/49472-Raspberry-pi-Controller-Automatic-Drink-Dispensing-66
+[Make your own crude Cocktail Machine] (https://www.youtube.com/watch?v=Z7GkGeZrb2Y)
+[Cocktails based on your mood created by a Raspberry Pi bartender]
+(https://www.youtube.com/watch?v=8q_5STFzJ6c)
+
+문제점 : 부족한 기능 구성. 그러므로 복잡하고 높은 수준의 난이도에 맞는 추가적인 아이디어 구상이 필요함
 
 
+### 회의 과정
 
-test text
+회의는 디스 코드 프로그램 사용
