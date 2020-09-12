@@ -95,10 +95,15 @@
 ### 자료 조사 
 
 [라즈베리파이와 어플을 이용한 임베디드 시리얼 제조기](https://www.youtube.com/watch?v=iAL7O1oMXZU&feature=youtu.be)
+
 [라즈베리파이 서브모터 음료 디스펜서](https://www.youtube.com/watch?v=Va_HRMmJt-g)
+
 [Rasberry Pi Smart Bartender](https://youtu.be/2DopvpNF7J4)
+
 [라즈베리파이 컨트롤러 자동 드링크 바텐더 분배](https://ko.howtodogood.com/49472-Raspberry-pi-Controller-Automatic-Drink-Dispensing-66)
-[Make your own crude Cocktail Machine] (https://www.youtube.com/watch?v=Z7GkGeZrb2Y)
+
+[Make your own crude Cocktail Machine](https://www.youtube.com/watch?v=Z7GkGeZrb2Y)
+
 [Cocktails based on your mood created by a Raspberry Pi bartender](https://www.youtube.com/watch?v=8q_5STFzJ6c)
 
 문제점 : 부족한 기능 구성. 그러므로 복잡하고 높은 수준의 난이도에 맞는 추가적인 아이디어 구상이 필요함
