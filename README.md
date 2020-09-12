@@ -77,8 +77,11 @@
 ### 자료 조사 
 
 [파이썬 강좌 – 딥러닝으로 표정 인식하기](https://m.blog.naver.com/roboholic84/221633210887)
+
 [얼굴 표정인식을 통한 사용자 감정 케어](https://ausome.tistory.com/6)
+
 [라즈베리파이를 이용한 칵테일 제조기 알콜램프](https://youtu.be/WO7iVxId79U)
+
 [라즈베리파이를 이용한 칵테일 제조기 알콜램프](http://eswcontest.or.kr/bbs/download.php?tbl=award&no=1411)
 
 ### 문제점
