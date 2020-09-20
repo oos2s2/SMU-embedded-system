@@ -135,9 +135,10 @@
  ### 전체 흐름도 예시
  
  어플에 있는 두 가지 선택지 중 자신이 원하는 기능을 선택한다.
+ 
  만약 내가 내 레시피에 따른 음료를 만들고싶다면, choosing a recipe 를 누르고 2주차 보고서에 있는 구상도에 맞춰 진행하면 된다.
  
- <img src="https://user-images.githubusercontent.com/62593236/93715219-0c21bc80-fba3-11ea-9674-30b6f742edd9.png" width="20%"></img>
+ <img src="https://user-images.githubusercontent.com/62593236/93715219-0c21bc80-fba3-11ea-9674-30b6f742edd9.png" width="30%"></img>
  
  만약 추천음료를 받고싶다면 recommend drinks를 누르고 기계에 부착된 카메라에 얼굴을 갖다댄다. 
  
