@@ -186,7 +186,9 @@ sd카드를 라즈베리파이3 모델에 꽂아준 뒤 라즈베리파이와 �
 
 3. opencv 설치
 실시간 동영상 촬영과 촬영 하는 동시에 얼굴을 인식하기 위한 opencv 프로그램 설치
+
 http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=92
+
 위 링크에 나온 내용을 토대로 opencv설치
 
 <img src="https://user-images.githubusercontent.com/70967826/94369779-c034c180-0126-11eb-99f2-0e8f9701e06e.png" width=50%></img>
