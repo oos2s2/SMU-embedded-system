@@ -169,10 +169,13 @@
 
 ## 이번 주 활동 내용
 ### 딥러닝
+
 1.라즈베리파이 설치
 sd카드에 https://www.raspberrypi.org/downloads/ 링크에서 다운받은 라즈베리파이os 설치
 sd카드를 라즈베리파이3 모델에 꽂아준 뒤 라즈베리파이와 컴퓨터용 모니터를 hdmi로 연결
+
 2.라즈베리파이 웹캠 연결
+
 <img src="https://user-images.githubusercontent.com/70967826/94369747-911e5000-0126-11eb-821b-10bd56809e44.png" width=50%></img>
 
 라즈베리파이 웹캠을 usb로 연결 후 fswebcam명령어를 이용해 사진촬영 동작 코드 작성
@@ -185,6 +188,7 @@ sd카드를 라즈베리파이3 모델에 꽂아준 뒤 라즈베리파이와 �
 실시간 동영상 촬영과 촬영 하는 동시에 얼굴을 인식하기 위한 opencv 프로그램 설치
 http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=92
 위 링크에 나온 내용을 토대로 opencv설치
+
 <img src="https://user-images.githubusercontent.com/70967826/94369779-c034c180-0126-11eb-99f2-0e8f9701e06e.png" width=50%></img>
 
 opencv가 정상적으로 설치됬는지 확인
