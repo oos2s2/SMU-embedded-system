@@ -164,3 +164,41 @@
 
 ### 회의 과정
 회의는 디스코드 프로그램 사용
+
+# 4주차 팀 활동 보고서
+
+## 이번 주 활동 내용
+### 딥러닝
+1.라즈베리파이 설치
+sd카드에 https://www.raspberrypi.org/downloads/ 링크에서 다운받은 라즈베리파이os 설치
+sd카드를 라즈베리파이3 모델에 꽂아준 뒤 라즈베리파이와 컴퓨터용 모니터를 hdmi로 연결
+2.라즈베리파이 웹캠 연결
+<img src="https://user-images.githubusercontent.com/70967826/94369747-911e5000-0126-11eb-821b-10bd56809e44.png" width=50%></img>
+
+라즈베리파이 웹캠을 usb로 연결 후 fswebcam명령어를 이용해 사진촬영 동작 코드 작성
+
+<img src="https://user-images.githubusercontent.com/70967826/94369771-b612c300-0126-11eb-991f-875450fd06e4.png" width=50%></img>
+
+라즈베리파이와 웹캠을 위 와 같은 명령어로 촬영한 사진
+
+3. opencv 설치
+실시간 동영상 촬영과 촬영 하는 동시에 얼굴을 인식하기 위한 opencv 프로그램 설치
+http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=92
+위 링크에 나온 내용을 토대로 opencv설치
+<img src="https://user-images.githubusercontent.com/70967826/94369779-c034c180-0126-11eb-99f2-0e8f9701e06e.png" width=50%></img>
+opencv가 정상적으로 설치됬는지 확인
+
+### 기계 제조
+
+
+### 어플
+
+
+
+## 다음 주 활동 계획
+### 딥러닝
+라즈베리파이와 opencv 프로그램을 이용해 동영상 촬영 및 얼굴인식 기능 구현
+### 기계 제조
+기계제작팀은 여태까지 회의했던 내용을 토대로 구상도를 구상해 그려보고, 기계제작에 필요한 재료와 부품들을 찾아본 후 다음 회의를 통해 구체적인 구상도를 구상한 후 제작에 필요한 재료와 부품들을 찾아 목록을 만들어 교수님께 제출할 계획입니다.
+### 어플
+설문조사 폼 구성 및 안드로이드와 파이어베이스 연결하여 데이터 저장
