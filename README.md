@@ -184,7 +184,7 @@ sd카드를 라즈베리파이3 모델에 꽂아준 뒤 라즈베리파이와 �
 
 라즈베리파이와 웹캠을 위 와 같은 명령어로 촬영한 사진
 
-3. opencv 설치
+3.opencv 설치
 
 실시간 동영상 촬영과 촬영 하는 동시에 얼굴을 인식하기 위한 opencv 프로그램 설치
 
@@ -197,10 +197,18 @@ http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=92
 opencv가 정상적으로 설치됬는지 확인
 
 ### 기계 제조
+
 기계 제작에 필요한 재료들을 생각해본 후 교수님께 재료들을 어떤 방법으로 구매할 수 있는지 피드백을 구함
 
 ### 어플
 
+앱 로딩화면이 2초 나타난 후 메인페이지 화면으로 이동
+
+<img src="https://user-images.githubusercontent.com/70967826/94380278-e03ca300-016f-11eb-8733-66ea4765b4de.png" width=30%></img>
+
+구상도대로 음료 추천받기와 직접 제조하기 버튼을 만들어 사용자에게 선택할 수 있게 함 firebase와 app을 연동시켜놓았음.
+
+<img src="https://user-images.githubusercontent.com/70967826/94380288-eaf73800-016f-11eb-85e0-3bec4d86b568.png" width=30%></img>
 
 
 ## 다음 주 활동 계획
