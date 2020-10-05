@@ -276,7 +276,7 @@ opencv가 정상적으로 설치됬는지 확인
 
 ![KakaoTalk_20201004_233622977](https://user-images.githubusercontent.com/70554317/95019780-465e8400-06a2-11eb-8fe5-6c471b4878bc.png)
 
-위에서 입력한 정보들을 버튼을 누름과 동시에 fire Realtime database에 데이터가 저장되도록 설정.     
+위에서 입력한 정보들을 버튼을 누름과 동시에 Firebase Realtime database에 데이터가 저장되도록 설정.     
 
 ### 딥러닝
 
