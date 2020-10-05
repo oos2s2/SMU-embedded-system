@@ -265,16 +265,16 @@ opencv가 정상적으로 설치됬는지 확인
 
 - 음료 레시피 선택을 위한 폼 구성 및 안드로이드와 파이어베이스를 연결하여 데이터 저장이 가능하도록 제작.
 
-![KakaoTalk_20201004_233614714](https://user-images.githubusercontent.com/70554317/95019739-17e0a900-06a2-11eb-9cd5-014b5cd5db97.png)
+<img src="https://user-images.githubusercontent.com/70554317/95019739-17e0a900-06a2-11eb-9cd5-014b5cd5db97.png" width=30%></img>
 
 음료 종류별로 버튼을 설정하여 페이지마다 자신이 원하는 레시피를 제조할 수 있도록 제작.
 
-![KakaoTalk_20201004_233618691](https://user-images.githubusercontent.com/70554317/95019767-39419500-06a2-11eb-95fd-f81e29d13351.png)
+<img src="https://user-images.githubusercontent.com/70554317/95019767-39419500-06a2-11eb-95fd-f81e29d13351.png" width=30%></img>
 
 음료 카테고리를 선택한 뒤 음료 제조에 필요한 물과 커피원액의 입력 및 사람마다 데이터 저장을 위한 이름을 입력할 수 있도록 제작 ,
 그 후 start버튼을 누르면 기계가 작동하도록 제작.
 
-![KakaoTalk_20201004_233622977](https://user-images.githubusercontent.com/70554317/95019780-465e8400-06a2-11eb-8fe5-6c471b4878bc.png)
+<img src="https://user-images.githubusercontent.com/70554317/95019780-465e8400-06a2-11eb-8fe5-6c471b4878bc.png" width=30%></img>
 
 위에서 입력한 정보들을 버튼을 누름과 동시에 Firebase Realtime database에 데이터가 저장되도록 설정.     
 
