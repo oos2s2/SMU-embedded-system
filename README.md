@@ -300,11 +300,11 @@ opencv프로그램을 python을 이용하여 카메라가 사람 얼굴을 인�
 
 - 구체적인 구상도 제작과 그에 관한 부품 조사와, 각 부품에 따른 기능 구상
 
-<img src="https://user-images.githubusercontent.com/70554317/95021237-bcff7f80-06aa-11eb-8320-2e4af7897c96.jpg" width=30%></img>
+<img src="https://user-images.githubusercontent.com/70554317/95021237-bcff7f80-06aa-11eb-8320-2e4af7897c96.jpg" width=80%></img>
 
 아두이노 워터 펌프를 이용해 음료가 담긴 병에서 기압차와 모터를 이용해 음료를 배출해내는 방법 구상.
 
-<img src="https://user-images.githubusercontent.com/70554317/95021271-f9cb7680-06aa-11eb-8d5a-44f254b6435e.jpg" width=30%></img>
+<img src="https://user-images.githubusercontent.com/70554317/95021271-f9cb7680-06aa-11eb-8d5a-44f254b6435e.jpg" width=80%></img>
 
 아두이노 서보 모터를 이용한 호스제어를 통해 음료 배출을 제어하는 방법 구상.
 
