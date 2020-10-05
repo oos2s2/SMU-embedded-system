@@ -304,7 +304,7 @@ opencv프로그램을 python을 이용하여 카메라가 사람 얼굴을 인�
 
 아두이노 워터 펌프를 이용해 음료가 담긴 병에서 기압차와 모터를 이용해 음료를 배출해내는 방법 구상.
 
-<img src="https://user-images.githubusercontent.com/70554317/95021271-f9cb7680-06aa-11eb-8d5a-44f254b6435e.jpg" width=80%></img>
+<img src="https://user-images.githubusercontent.com/70554317/95021271-f9cb7680-06aa-11eb-8d5a-44f254b6435e.jpg" width=60%></img>
 
 아두이노 서보 모터를 이용한 호스제어를 통해 음료 배출을 제어하는 방법 구상.
 
