@@ -310,3 +310,86 @@ opencv프로그램을 python을 이용하여 카메라가 사람 얼굴을 인�
 
 제품 구매 시 서보 모터와 워터 펌프 두가지를 다 구매해 각각 제작후 가동해본뒤, 기계 작동에 지장이 없는쪽으로 부품을 선택해 제작 예정.
 
+## 6주차 팀 보고서
+
+- 역할 분담 : 강정연 - 깃허브작성, 김현승 - 대본작성, 임진선 -발표 녹음 및 영상 제작
+
+## 이번주 활동 
+
+### 딥 러닝
+
+-딥 러닝 및 머신 러닝을 사용하기 위한 패키지를 설치하는것이 가능하게 하기 위해 라즈베리파이에 아나콘다 플랫폼 설치 .
+
+정상적인 프로그램 설치를 위해 기본적으로 라즈베리파이 업데이트 및 업그레이드를 해줌.
+
+<pre>
+$ sudo apt-get update
+$ sudo apt-get upgrade
+</pre>
+</br>
+
+웹 서버로부터 Miniconda3 설치 프로그램 콘텐츠를 가져오기 위해 wget명령어를 사용해 Miniconda3 설치 프로그램 패키지 다운.
+
+<pre>
+$ wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
+</pre>
+</br>
+
+md5sum명령어를 이용하여 다운로드한 파일의 이상유무 확인.
+
+<pre>
+$ sudo md5sum Miniconda3-latest-Linux-armv7l.sh
+</pre>
+</br>
+
+다운받은 Miniconda3 설치 프로그램 실행하여 Miniconda3 설치(설치 파일 경로 = /home/pi/miniconda3).
+
+<pre>
+$ sudo /bin/bash Miniconda3-latest-Linux-armv7l.sh
+</pre>
+</br>
+
+설치가 완료된 후 nano 편집기로 Miniconda3 실행파일에 들어감(본 파일의 끝에 export PATH="/home/pi/miniconda3/bin:$PATH" 추가).
+
+<pre>
+$ sudo nano /home/pi/.bashrc
+</pre>
+</br>
+
+실행파일 실행.
+
+<pre>
+$ source ~/.bashrc
+</pre>
+</br>
+
+conda --version을 입력해 정상적으로 설치 되었음을 확인.
+
+![2020-10-11-235521_631x449_scrot](https://user-images.githubusercontent.com/70554317/95682567-d2cbf200-0c20-11eb-901e-dd49ec462439.png)
+
+-아나콘다 설치 후 실행 과정에서 이전에 설치한 opencv프로그램 작동이 안됨, 그 이유가 웸캠 실행에 필요한 파이썬 버전이 아나콘다와 opencv 서로 안맞음. 이 문제 해결 완료 후 본격적인 딥 러닝 활동 시작 예정.
+
+### 기계 제조
+
+-음료 제조 기계에 필요한 구상 완성과 그에 맞는 부품 구매. 
+
+<img src="https://user-images.githubusercontent.com/70554317/95021237-bcff7f80-06aa-11eb-8320-2e4af7897c96.jpg" width=90%></img>
+
+<img src="https://user-images.githubusercontent.com/70554317/95021271-f9cb7680-06aa-11eb-8d5a-44f254b6435e.jpg" width=80%></img>
+
+부품 목록(표기된 가격은 배송비가 포함되어 있는 가격이 아닙니다.)
+
+부품 | 상세 | 가격 | 참고 
+---- | ---- | ---- | ----
+우드락 | 5T 60x90cm 10장 비접착 1개 | 15000원 | https://smartstore.naver.com/dnara/products/2309183053
+우드락본드 | 2개 | 2400원 | https://smartstore.naver.com/dnara/products/2478819744
+하드보드지 | 2절지 5장 1개 | 7500원 | https://smartstore.naver.com/dnara/products/2441815695
+워터펌프 & 실리콘 호수 | (옵션선택) 흡입구, 토출구호스 둘 다  1m(d5 X D8 X 1.5T) 1개 | 15,950원 | https://www.devicemart.co.kr/goods/view?no=1326767
+서보모터 | 1개 | 6800원 | http://m.techshenzhen.com/goods/goods_view.php?goodsNo=1000000605
+글루건 & 글루스틱 | GR-20 글루건 1개 7.3 투명 (10개/26cm)  1개 | 7300원 | https://daisomall.co.kr/shop/goods_view.php?id=0001763633&cid=&depth=&search_text=%EA%B8%80%EB%A3%A8%EA%B1%B4
+
+-본 부품들이 도착한 뒤 본격적인 기계 제조에 앞서 본 부품들의 작동 원리와 작동을 위한 지식과 정보를 찾아보고 공부할 예정.
+
+### 어플
+
+-딥 러닝에서의 정상적인 데이터셋 활동이 시작되면 그에 맞춰 데이터를 받아올 수 있는 방법 연구 예정.
