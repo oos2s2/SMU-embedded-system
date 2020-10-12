@@ -318,7 +318,7 @@ opencv프로그램을 python을 이용하여 카메라가 사람 얼굴을 인�
 
 ### 딥 러닝
 
--딥 러닝 및 머신 러닝을 사용하기 위한 패키지를 설치하는것이 가능하게 하기 위해 라즈베리파이에 아나콘다 플랫폼 설치 .
+- 딥 러닝에서의 정상적인 데이터셋 활동이 시작되면 그에 맞춰 데이터를 받아올 수 있는 방법 연구 예정.
 
 정상적인 프로그램 설치를 위해 기본적으로 라즈베리파이 업데이트 및 업그레이드를 해줌.
 
@@ -367,11 +367,11 @@ conda --version을 입력해 정상적으로 설치 되었음을 확인.
 
 ![2020-10-11-235521_631x449_scrot](https://user-images.githubusercontent.com/70554317/95682567-d2cbf200-0c20-11eb-901e-dd49ec462439.png)
 
--아나콘다 설치 후 실행 과정에서 이전에 설치한 opencv프로그램 작동이 안됨, 그 이유가 웸캠 실행에 필요한 파이썬 버전이 아나콘다와 opencv 서로 안맞음. 이 문제 해결 완료 후 본격적인 딥 러닝 활동 시작 예정.
+- 아나콘다 설치 후 실행 과정에서 이전에 설치한 opencv프로그램 작동이 안됨, 그 이유가 웸캠 실행에 필요한 파이썬 버전이 아나콘다와 opencv 서로 안맞음. 이 문제 해결 완료 후 본격적인 딥 러닝 활동 시작 예정.
 
 ### 기계 제조
 
--음료 제조 기계에 필요한 구상 완성과 그에 맞는 부품 구매. 
+- 음료 제조 기계에 필요한 구상 완성과 그에 맞는 부품 구매. 
 
 <img src="https://user-images.githubusercontent.com/70554317/95021237-bcff7f80-06aa-11eb-8320-2e4af7897c96.jpg" width=90%></img>
 
@@ -388,8 +388,18 @@ conda --version을 입력해 정상적으로 설치 되었음을 확인.
 서보모터 | 1개 | 6800원 | http://m.techshenzhen.com/goods/goods_view.php?goodsNo=1000000605
 글루건 & 글루스틱 | GR-20 글루건 1개 7.3 투명 (10개/26cm)  1개 | 7300원 | https://daisomall.co.kr/shop/goods_view.php?id=0001763633&cid=&depth=&search_text=%EA%B8%80%EB%A3%A8%EA%B1%B4
 
--본 부품들이 도착한 뒤 본격적인 기계 제조에 앞서 본 부품들의 작동 원리와 작동을 위한 지식과 정보를 찾아보고 공부할 예정.
+- 본 부품들이 도착한 뒤 본격적인 기계 제조에 앞서 본 부품들의 작동 원리와 작동을 위한 지식과 정보를 찾아보고 공부할 예정.
 
 ### 어플
 
--딥 러닝에서의 정상적인 데이터셋 활동이 시작되면 그에 맞춰 데이터를 받아올 수 있는 방법 연구 예정.
+- 음료 선택을 위한 폼 구성에서 추가로 메뉴 구성.
+
+<img src="https://user-images.githubusercontent.com/70554317/95695215-e30bbd80-0c70-11eb-9bf5-9f9b4ca25a42.png" width=30%></img>
+
+<img src="https://user-images.githubusercontent.com/70554317/95695236-059dd680-0c71-11eb-865b-9fc8c128412c.png" width=30%></img>
+
+<img src="https://user-images.githubusercontent.com/70554317/95695246-11899880-0c71-11eb-8872-3e132aef05f0.png" width=30%></img>
+
+<img src="https://user-images.githubusercontent.com/70554317/95695252-19e1d380-0c71-11eb-9264-01618b543584.png" width=30%></img>
+
+- 딥 러닝에서의 정상적인 데이터셋 활동이 시작되면 그에 맞춰 데이터를 받아올 수 있는 방법 연구 예정.
