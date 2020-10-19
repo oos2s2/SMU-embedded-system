@@ -468,6 +468,7 @@ http://192.168.0.17:8888/?token=4aaf5f14fa5d7c93bb0c49c16ae3d0af5d106ea465a2e771
 
 http://192.168.0.17:8888/?token=4aaf5f14fa5d7c93bb0c49c16ae3d0af5d106ea465a2e771
 부분에 해당하는 URL로 들어가면 jupyter notebook이 실행됨.
+
 < img src = "https://user-images.githubusercontent.com/70791411/96401969-c0008100-120f-11eb-968f-eb2d70b4a4cb.png" 너비 = 90%> </img>
 
 -라즈베리파이와 휴대폰을 서로 스트리밍 하기위해 uv4l프로그램을 라즈베리파이에 설치할 예정.
@@ -476,7 +477,7 @@ http://192.168.0.17:8888/?token=4aaf5f14fa5d7c93bb0c49c16ae3d0af5d106ea465a2e771
 ### 기계 제조
 -두 개의 구상도 중 워터펌프를 사용하여 기계를 제조하는 구상도로 확정하였고 라즈베리파이를 이용하여 워터펌프를 제어하여 기계를 제작하는 것으로 확정함.
 
-< img src = "https://user-images.githubusercontent.com/70791411/96402133-15d52900-1210-11eb-9687-0fe3f9599563.jpg" 너비 += 90%> </img>
+< img src = "https://user-images.githubusercontent.com/70791411/96402133-15d52900-1210-11eb-9687-0fe3f9599563.jpg" 너비 = 90%> </img>
 
 -기계 제조에 앞서 라즈베리파이를 사용하여 워터펌프를 제어할 수 있는 방법과 지식, 정보에 대해 찾아보고 공부할 예정.
 
