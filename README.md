@@ -423,6 +423,7 @@ $ sudo apt-get update
 </br>
 
 설치에 필요한 python 라이브러리들을 설치해줌.
+
 또한, pip도 최신버전으로 업그레이드까지 해준 뒤 재부팅을 해줌.
 
 <pre>
@@ -441,7 +442,9 @@ $ sudo pip3 install jupyter
 </br>
 
 jupyter notebook 실행을 위한 명령어를 입력해줌. (라즈베리파이의 ip주소는 ifconfig명령어로 확인)
+
 실행할 때 ip주소를 지정해주고 ssh 연결 상태이므로 "--no-browser" 플래그를 통해 인터넷 창이 켜지지 않도록 함.
+
 그렇지 않으면 display관련 에러가 나면서 jupyter notebook이 꺼짐
 
 <pre>
