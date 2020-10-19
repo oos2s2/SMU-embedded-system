@@ -404,3 +404,126 @@ conda --version을 입력해 정상적으로 설치 되었음을 확인.
 
 - 딥 러닝에서의 정상적인 데이터셋 활동이 시작되면 그에 맞춰 데이터를 받아올 수 있는 방법 연구 예정.
 
+
+## 7주차 팀 보고서
+
+-역할 분담 : 이예림 - 깃허브작성, 강정연 - 대본작성, 임진선 - 발표 녹음 및 영상 제작
+
+## 이번주 활동
+
+### 딥 러닝
+-라즈베리파이와 노트북 랜선연결을 시도하였음.
+-딥 러닝에 필요한 라이브 코드와 딥 러닝에 필요한 통계 데이터와 문서를 공유하기 위해 라즈베리파이에 jupyter notebook 설치하였음.
+
+설치에 필요한 라즈베리파이 업데이트를 해줌.
+
+<사전>
+$ sudo apt-get update
+</사전>
+</br>
+
+설치에 필요한 python 라이브러리들을 설치해줌.
+또한, pip도 최신버전으로 업그레이드까지 해준 뒤 재부팅을 해줌.
+
+<사전>
+$ sudo apt-get install python3-matplotlib -y
+$ sudo apt-get install python3-scipy -y
+$ sudo pip3 install --upgrade pip
+$ sudo reboot
+</사전>
+</br>
+
+재부팅이 완료되면 pip를 이용하여  jupyter notebok을 설치해줌.
+
+<사전>
+$ sudo pip3 install jupyter
+</사전>
+</br>
+
+jupyter notebook 실행을 위한 명령어를 입력해줌. (라즈베리파이의 ip주소는 ifconfig명령어로 확인)
+실행할 떄 ip주소를 지정해주고 ssh 연결 상태이므로 "--no-browser" 플래그를 통해 인터넷 창이 켜지지 않도록 함.
+그렇지 않으면 display관련 에러가 나면서 jupyter notebook이 꺼짐
+
+<사전>
+$ jupyter-notebook --ip="라즈베리파이 ip 주소" --no-browser
+</사전>
+</br>
+
+위의 명령어를 입력하면 다음과 같은 내용이 출력됨
+
+<사전>
+[I 11:42:23.596 NotebookApp] Writing notebook server cookie secret to /run/user/1000/jupyter/notebook_cookie_secret
+[I 11:42:33.408 NotebookApp] Serving notebooks from local directory: /home/pi
+[I 11:42:33.409 NotebookApp] The Jupyter Notebook is running at:
+[I 11:42:33.409 NotebookApp] 
+http://192.168.0.17:8888/?token=4aaf5f14fa5d7c93bb0c49c16ae3d0af5d106ea465a2e771
+[I 11:42:33.409 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 11:42:33.431 NotebookApp]
+
+    To access the notebook, open this file in a browser:
+        file:///run/user/1000/jupyter/nbserver-9071-open.html
+    Or copy and paste one of these URLs:
+        http://192.168.0.17:8888/?token=4aa**********
+</사전>
+</br>
+
+http://192.168.0.17:8888/?token=4aaf5f14fa5d7c93bb0c49c16ae3d0af5d106ea465a2e771
+부분에 해당하는 URL로 들어가면 jupyter notebook이 실행됨.
+
+![image](https://user-images.githubusercontent.com/70791411/96401969-c0008100-120f-11eb-968f-eb2d70b4a4cb.png)
+
+
+-라즈베리파이와 휴대폰을 서로 스트리밍 하기위해 uv4l프로그램을 라즈베리파이에 설치할 예정.
+-라즈베리파이와 노트북 랜선 연결을 계속 시도해볼 예정
+
+### 기계 제조
+-두 개의 구상도 중 워터펌프를 사용하여 기계를 제조하는 구상도로 확정하였고 라즈베리파이를 이용하여 워터펌프를 제어하여 기계를 제작하는 것으로 확정함.
+
+![기계구상도도안1](https://user-images.githubusercontent.com/70791411/96402133-15d52900-1210-11eb-9687-0fe3f9599563.jpg)
+
+-기계 제조에 앞서 라즈베리파이를 사용하여 워터펌프를 제어할 수 있는 방법과 지식, 정보에 대해 찾아보고 공부할 예정.
+
+### 어플
+
+핸드폰에서 카메라를 스트리밍 하기위해 라즈베리파이에 uv4l 드라이버를 설치함. (아래 코드는 설치코드)
+
+<사전>
+$ sudo apt-get install uv4l uv4l-raspicam
+$ sudo apt-get install uv4l-raspicam-extras
+</사전>
+</br>
+
+서비스를 시작 및 종료하는 명령어
+
+시작하는 명령어
+
+<사전>
+$ sudo service uv4l_raspicam restart
+</사전>
+</br>
+
+원하는 옵션으로 시작하는 명령어
+
+<사전>
+$ uv4l —driver raspicam —auto-video_nr —width 640 —height 480 —encoding jpeg   
+</사전>
+</br>
+
+강제종료하는 명령어
+
+<사전>
+$ sudo pkill uv4l  
+</사전>
+</br>
+
+스트리밍 서버를 위한 패키치를 설치함
+
+<사전>
+$ sudo apt-get install uv4l-server uv4l-uvc uv4l-xscreen uv4l-mjpegstream uv4l-dummy uv4l-raspidisp
+</사전>
+</br>
+
+안드로이드 스튜디오에 웹뷰 추가해서 
+http://라즈베리파이주소/stream/video.mjpeg 에 들어가면 카메라가 보고있는 화면이 뜸.
+
+-안드로이드 핸드폰을 전달받아 안드로이드 핸드폰에 만든 앱을 연결 해보고 연결 시키기 등을 해볼 예정.
