@@ -39,6 +39,7 @@
 <img src="https://user-images.githubusercontent.com/62593236/92330566-d6f97280-f0aa-11ea-99cc-64b3d537cc5f.png" width="90%"></img>
 
 신발장 벽에 부착된 대시보드디바이스와 마스크 살균기 박스, 손소독제로 구성되어 있음.
+
 외출 시 열감지 센서에 사람이 인식되면 대시보드에서 '마스크를 착용하세요'라는 멘트가 나오도록 설정하고, 
 똑같이 집에 들어오는 것이 인식되면 대시보드에서 '소독제를 사용한 후 마스크를 살균기에 넣으세요'라는 멘트가 나오도록 설정할 것임.
 대시보드에는 이 외에도 수동으로 살균기가 작동하도록 버튼이 제작돼있고, 코로나 관련 소식을 담아놓도록 제작할 것임.
@@ -528,3 +529,84 @@ http://라즈베리파이주소/stream/video.mjpeg 에 들어가면 카메라가
 
  - 안드로이드 핸드폰을 전달받아 안드로이드 핸드폰에 만든 앱을 연결 해보고 연결 시키기 등을 해볼 예정.
 
+## 8주차 팀 보고서
+
+### 딥 러닝
+
+- 휴대폰 안드로이드와 아즈베리파이의 웹캠을 실시간 스트리밍 시키기 위해 라즈베리파이에 uv4l프로그램 설치.
+
+uv4l프로그램 버전 설정을 위한 명령어 입력.
+<pre>
+$ curl http://www.linux-projects.org/listing/uv4l_repo/lpkey.asc | sudo apt-key add -
+</pre>
+<br>
+
+sources.list 파일에 다음을 추가.
+<pre>
+$ sudo nano /etc/apt/sources.list
+// 아래 내용 추가
+deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/stretch stretch main
+</pre>
+<br>
+
+소스를 바꿔주었으므로 전체적인 시스템 update 진행.
+<pre>
+$ sudo apt-get update
+</pre>
+<br>
+
+uv4l 설치.
+<pre>
+$ sudo apt-get install uv4l uv4l-raspicam
+</pre>
+<br>
+
+드라이버 로드를 위한 패키지 설치.
+<pre>
+$ sudo apt-get install uv4l-raspicam-extras
+</pre>
+<br>
+
+서비스 시작 및 종료 명령어.
+<pre>
+// 시작
+$ sudo service uv4l_raspicam restart
+// 원하는 옵션으로 시작
+$ uv4l —driver raspicam —auto-video_nr —width 640 —height 480 —encoding jpeg   
+// 강제종료
+$ sudo pkill uv4l      
+</pre>
+<br>
+
+스트리밍 서버를 위한 패키지 설치.
+<pre>
+$ sudo apt-get install uv4l-server uv4l-uvc uv4l-xscreen uv4l-mjpegstream uv4l-dummy uv4l-raspidisp     
+</pre>
+<br>
+
+
+웹캠관련 명령어.
+<pre>
+// 펌웨어 업데이트하기
+$ sudo rpi-update
+// 웹캠이 인식됐는지 확인하기
+$ v4l2-ctl -V
+// uv4l로 웹캠화면 한번 찍기
+$ dd if=/dev/video0 of=snapshot.jpeg bs=11M count=1  
+</pre>
+<br>
+
+웹에서 스트리밍 하기 위해서는 "http://라즈베리파이ip:8080"으로 접속(파이캠은 8080, 웹캠은 8090).
+위 과정에서 설치하기이전 라즈베리파이캠을 인식 시켜야 되는데 라지브레파이캠 인식 불가로 프로그램 실행하지 못하였음.
+
+### 기계 제조
+
+- 이전에 주문한 부품 수령 및 확인.
+- 본격적인 제조에 앞서 구체적인 원리와 정보 등 공부 예정.
+
+### 어플
+
+- 어플 제작에 요구되는 환경과 다른 활동과의 진도가 맞지 않아 추가적인 활동 진해하지 못하였음. 
+- 추가로 어플의 전체적인 폼 디자인 구성과 세부적인 요소 구상 예정
+
+시험기간으로 인해 많은 양의 활동을 못하였음. 다음 주 부터 빠른 속도로 프로젝트 진행 예정. 
