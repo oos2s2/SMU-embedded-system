@@ -685,6 +685,7 @@ uv4l 드라이브로 카메라 스트리밍 과정에서 파이캠으로 영상�
 파이캠을 연결한 뒤 정상적인 연결 확인을 시도했지만 파이2개 모두 계속적인 연결 오류 메시지가 뜸
 
 밑의 사진처럼 메시지에서 supported=1 detected=1과 같이 떠야 정상
+
 <img src="https://user-images.githubusercontent.com/62593236/98489773-c9ab6080-2272-11eb-8cf3-3de68fe4c2ee.png" width="50%"></img>
 
 오류의 원인을 파이캠의 FFC케이블의 문제라고 판단하여 새로운 파이캠을 구매함
