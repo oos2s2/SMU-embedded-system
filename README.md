@@ -721,3 +721,80 @@ uv4l 드라이브로 카메라 스트리밍 과정에서 파이캠으로 영상�
 다음주에는 1개의 펌프의 작동이 원활하였으므로, 
 추가로 어러개의 펌프를 제어하기 위해 릴레이 모듈과 펌프, 호스를 추가주문할 계획이며, 
 전원선을 받아 다수의 펌프작동을 원활하게 동작시킬 수 있도록 그에 맞는 코딩을 시도할 예정임.
+
+## 11주차 팀 활동 보고서
+
+### 딥 러닝
+
+- 라즈베리파이카메라 재주문 후 라즈베리파이와 정상적인 연결을 해준 뒤 uv4l 스트리밍 재시도.
+
+이전에 했던 라즈베리파이에 uv4l 설치를 재진행.
+
+uv4l프로그램 버전 설정을 위한 명령어 입력.
+<pre>
+$ curl http://www.linux-projects.org/listing/uv4l_repo/lpkey.asc | sudo apt-key add -
+</pre>
+<br>
+
+sources.list 파일에 다음을 추가.
+<pre>
+$ sudo nano /etc/apt/sources.list
+// 아래 내용 추가
+deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/stretch stretch main
+</pre>
+<br>
+
+소스를 바꿔주었으므로 전체적인 시스템 update 진행.
+<pre>
+$ sudo apt-get update
+</pre>
+<br>
+
+uv4l 설치.
+<pre>
+$ sudo apt-get install uv4l uv4l-raspicam
+</pre>
+<br>
+
+드라이버 로드를 위한 패키지 설치.
+<pre>
+$ sudo apt-get install uv4l-raspicam-extras
+</pre>
+<br>
+
+서비스 시작 및 종료 명령어.
+<pre>
+// 시작
+$ sudo service uv4l_raspicam restart
+// 원하는 옵션으로 시작
+$ uv4l —driver raspicam —auto-video_nr —width 640 —height 480 —encoding jpeg   
+// 강제종료
+$ sudo pkill uv4l      
+</pre>
+<br>
+
+스트리밍 서버를 위한 패키지 설치.
+<pre>
+$ sudo apt-get install uv4l-server uv4l-uvc uv4l-xscreen uv4l-mjpegstream uv4l-dummy uv4l-raspidisp     
+</pre>
+<br>
+
+웹에서 스트리밍 하기 위해서는 "http://라즈베리파이ip:8080"으로 접속(파이캠은 8080, 웹캠은 8090).
+
+위 주소로 접속하면 밑과 같은 uv4l페이지가 나옴.
+
+<img src="https://user-images.githubusercontent.com/70554317/99212654-fd582e80-280e-11eb-95fe-bee3250684fe.png" width="50%"></img>
+
+본 메뉴에서 MJPEG/Stills stream이 나와있는 메뉴를 선택하면 밑과 같이 실시간 스트리밍이 진행된다.
+
+<img src="https://user-images.githubusercontent.com/70554317/99212879-88392900-280f-11eb-84a5-d3630880d857.png" width="50%"></img>
+
+### 어플
+
+- 이전까지 딥 러닝에서의 스트리밍 과정이 진행되지 못하였기 때문에 파이를 이용해 opencv 설치 및 작동과 딥 러닝 관련 자료 검색등을 함.
+- 기계팀과 어플과의 연동 및 부품관련 주기적인 회의 진행함.
+
+### 기계제조
+
+- 부품 주문 과정에서 착오가 생긴 이유로 인해 몇번의 회의를 거친뒤, 부품 재주문이 이루어질 예정.
+- 이전에 구상하였던 구상도 확인 및 부품에 맞게 구상도를 재수정함.
