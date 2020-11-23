@@ -801,7 +801,7 @@ $ sudo apt-get install uv4l-server uv4l-uvc uv4l-xscreen uv4l-mjpegstream uv4l-d
 
 ## 12주차 팀 활동 보고서
 
-### 머신 
+### 머신 러닝
 
  - 지난주에 접속한 스트리밍 서버를 어플과 연동될 수 있게 스트리밍 서버에 고정 ip할당을 하였음.
  - 원래 표정인식으로 인한 감정 추출 후 데이터를 저장하려고 했으나 더욱더 정삭적인 데이터 추출과 상용화적인 부분을 위해 사람 얼굴인식을 기반으로한 데이터 추출로 변경 예정.
@@ -820,3 +820,4 @@ $ sudo apt-get install uv4l-server uv4l-uvc uv4l-xscreen uv4l-mjpegstream uv4l-d
 
  - 회의 후 결졍 된 부품들을 재주문 후, 전달받음
  - 구매한 워터펌프와 드라이버쉴드가 작동이 되는지 테스트 후 아두이노와 워터펌프를 연결한 후 실행코드 작성 및 부품 납땜 후 기계에 부착할 예정.
+
