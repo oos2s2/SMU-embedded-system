@@ -821,3 +821,77 @@ $ sudo apt-get install uv4l-server uv4l-uvc uv4l-xscreen uv4l-mjpegstream uv4l-d
  - 회의 후 결졍 된 부품들을 재주문 후, 전달받음
  - 구매한 워터펌프와 드라이버쉴드가 작동이 되는지 테스트 후 아두이노와 워터펌프를 연결한 후 실행코드 작성 및 부품 납땜 후 기계에 부착할 예정.
 
+## 13주차 팀 활동 보고서
+
+### 머신 러닝
+
+- 라즈베리파이의 외부 스트리밍을 완료 시킨후 얼굴 인식 기반 데이터셋을 하기 이전 스트리밍내에서 얼굴 인식을 시도함.
+  
+- 얼굴 인식 및 인식한 얼굴의 데이터 수집을 하기 위한 opencv에서 제공하는 xml형태의 이미지 모델인 haarcascade_frontalface_default.xml을 
+  라즈베리파이에 다운.
+  
+- 라즈베리파이에 얼굴 인식을 위한 코드 작성
+  
+<pre>
+import numpy as np
+ import cv2
+ faceCascade = cv2.CascadeClassifier('Cascades/haarcascade_frontalface_default.xml')
+ cap = cv2.VideoCapture(0)
+ cap.set(3,640) # set Width
+ cap.set(4,480) # set Height
+ while True:
+   ret, img = cap.read()
+   gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    faces = faceCascade.detectMultiScale(
+       gray,     
+       scaleFactor=1.2,
+       minNeighbors=5,     
+       minSize=(20, 20)
+   )
+   for (x,y,w,h) in faces:
+       cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+       roi_gray = gray[y:y+h, x:x+w]
+       roi_color = img[y:y+h, x:x+w]  
+   cv2.imshow('video',img)
+   k = cv2.waitKey(30) & 0xff
+   if k == 27: # press 'ESC' to quit
+       break
+cap.release()
+cv2.destroyAllWindows()   
+</pre>
+<br>
+
+- 작성한 코드를 파이썬으로 실행한 화면.
+
+<img src="https://user-images.githubusercontent.com/70554317/100547461-3df18680-32aa-11eb-94e2-1b84d9d8c47d.PNG" width="50%"></img>
+
+- 위 코드에서 카메라 영상을 스트리밍 서버안에서 켜기 위해 cap = cv2.VideoCapture(0)코드를 
+  cap = cv2.VideoCapture("http://"raspi-ip:8080/stream/video.mjpeg")로 변경 하였으나 통신이 원활하지 못해 영상 송출이 안되는 문제를 해결 진행중.
+
+### 기계 제조
+
+- 아두이노에 드라이버쉴드를 부착하고, 워터펌프 4개 연결함.
+
+<img src="https://user-images.githubusercontent.com/70554317/100547608-0f27e000-32ab-11eb-8b77-5822799ebe01.png" width="50%"></img>
+
+- 모터당 순서를 설정 해준 후, 속조를 설정해줌.
+
+<img src="https://user-images.githubusercontent.com/70554317/100547639-35e61680-32ab-11eb-9a7e-a4915b5febaa.png" width="50%"></img>
+
+- 4개의 워터펌프를 작동시킬 코드를 작성함.
+
+<img src="https://user-images.githubusercontent.com/70554317/100547663-531ae500-32ab-11eb-80a1-a6a7a292485e.png" width="50%"></img>
+
+- 순서를 설정해준 모터에 이름을 설정해줌.
+
+<img src="https://user-images.githubusercontent.com/70554317/100547695-7cd40c00-32ab-11eb-887a-fae3f094abfe.png" width="50%"></img>
+
+- 설정한 이름을 시리얼 모니터를 실행해 입력했을 때, 입력받은 이름의 모터가 작동함.
+
+<img src="https://user-images.githubusercontent.com/70554317/100547741-b1e05e80-32ab-11eb-824c-35b434afcaab.png" width="50%"></img>
+
+<img src="https://user-images.githubusercontent.com/70554317/100547774-f23fdc80-32ab-11eb-94fa-3d25f88d7267.png" width="25%"></img>
+<img src="https://user-images.githubusercontent.com/70554317/100547791-01268f00-32ac-11eb-8cda-f32b334120ef.png" width="25%"></img>
+
+- 아두이노와 드라이버쉴드에 4개의 워터펌프를 연결시켰기 때문에 재료의 가지 수를 4가지로 맞춰 커피원액, 바닐라시럽, 물, 우유로 정하였고, 메뉴는 아   메리카노, 카페라떼, 바닐라라떼로 정함. 각 재료의 그램수를 정해 초단위로 계산해서 음료의 레시피대로 코딩을 한 후, 
+  어플 & 머신 러닝팀에 전달할 예정
