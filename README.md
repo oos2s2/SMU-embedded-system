@@ -893,5 +893,17 @@ cv2.destroyAllWindows()
 <img src="https://user-images.githubusercontent.com/70554317/100547774-f23fdc80-32ab-11eb-94fa-3d25f88d7267.png" width="25%"></img>
 <img src="https://user-images.githubusercontent.com/70554317/100547791-01268f00-32ac-11eb-8cda-f32b334120ef.png" width="25%"></img>
 
-- 아두이노와 드라이버쉴드에 4개의 워터펌프를 연결시켰기 때문에 재료의 가지 수를 4가지로 맞춰 커피원액, 바닐라시럽, 물, 우유로 정하였고, 메뉴는 아   메리카노, 카페라떼, 바닐라라떼로 정함. 각 재료의 그램수를 정해 초단위로 계산해서 음료의 레시피대로 코딩을 한 후, 
-  어플 & 머신 러닝팀에 전달할 예정
+- 아두이노와 드라이버쉴드에 4개의 워터펌프를 연결시켰기 때문에 재료의 가지 수를 4가지로 맞춰 커피원액, 바닐라시럽, 물, 우유로 정하였고, 메뉴는 아   메리카노, 카페라떼, 바닐라라떼로 정함. 각 재료의 그램수를 정해 초단위로 계산해서 음료의 레시피대로 코딩을 한 후, 어플 & 머신 러닝 팀에 전달할 예   정.
+  
+  ### 어플
+  
+  - 회원가입과 로그인창을 만들어 파이어 베이스와 연결시켜 데이터를 저장함.
+  
+ <img src="https://user-images.githubusercontent.com/70554317/100567481-f13e9780-330b-11eb-94fe-76c06a25d79c.png" width="25%"></img>
+ <img src="https://user-images.githubusercontent.com/70554317/100567577-2945da80-330c-11eb-8ccd-d6dd5ab63f0e.png" width="25%"></img>
+ <img src="https://user-images.githubusercontent.com/70554317/100567628-4d092080-330c-11eb-8137-71912cc25ef1.png" width="25%"></img> 
+ 
+ - 테스트결과 데이터가 저장된 것을 볼 수 있음.
+ 
+  <img src="https://user-images.githubusercontent.com/70554317/100569189-a8d5a880-3310-11eb-8f44-e0ed601bc075.png" width="50%"></img> 
+ 
