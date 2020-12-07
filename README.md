@@ -915,12 +915,47 @@ cv2.destroyAllWindows()
 
 ### 어플
 
-아두이노와 블루투스 연결하기 위한 코드를 작성하였고 블루투스 모듈을 받으면 아두이노와 실행시킬 예정입니다
+아두이노와 블루투스 연결하기 위한 코드를 작성하였고 블루투스 모듈을 받으면 아두이노와 실행시킬 예정.
 라즈베리파이와의 연결은 블루투스연결이 원활하지 않아 소켓통신을 시도하고있으며, 
-얼굴인식 시 첫 방문이 아닌 기존의 데이터에 있는 사용자일 경우 푸쉬알림이 가도록 설정하는 과정에 있습니다. 
+얼굴인식 시 첫 방문이 아닌 기존의 데이터에 있는 사용자일 경우 푸쉬알림이 가도록 설정하는 과정에 있음
 
 ### 기계 제조
 
 순서와 속도를 설정한 4개의 모터에 각각 음료재료들을 정해주고 
-동작시간을 초단위로 설정하여, 컵에 담길 재료 양을 설정함
+동작시간을 초단위로 설정하여, 컵에 담길 재료 양을 설정함.
+
+<img src="https://user-images.githubusercontent.com/62593236/101311945-ed73bd80-3895-11eb-9e04-9ba73cfd82df.png" width="40%"></img> 
+
+현재 
+모터 1은 커피원액으로 설정했으며, 1.4초동안 30ml 추출하도록 설정함.
+모터 2는 물로 설정하였으며, 9.6초동안 200ml 추출하도록 설정함.
+모터 3은 우유로 설정하였으며, 11.2초동안 200ml 추출하도록 설정함.
+모터 4는 시럽으로 설정하였으며,1.2초동안 10ml 추출하도록 설정함.
+
+<img src="https://user-images.githubusercontent.com/62593236/101312135-58bd8f80-3896-11eb-950b-e14c5ff6ce31.png" width="70%"></img> 
+
+각 모터를 활용하여, 위에서 설정한 초단위를 바탕으로 레시피에 따라 각각의 음료를 제조할 수 있도록 번호를 부여하였음
+하였음
+
+<img src="https://user-images.githubusercontent.com/62593236/101312216-8acef180-3896-11eb-8c74-26f712f7496a.png" width="70%"></img>
+
+정한 번호(이름)을 시리얼 모니터를 실행해 입력했을 때,입력받은 이름의 모터가 작동하며,그에 맞는 음료가 제조됨.
+
+<img src="https://user-images.githubusercontent.com/62593236/101312322-d1bce700-3896-11eb-9285-196612f4412c.png" width="60%"></img> 
+
+<img src="https://user-images.githubusercontent.com/62593236/101312364-ebf6c500-3896-11eb-95dd-cc976c1d29a6.png" width="20%"></img> 
+
+<img src="https://user-images.githubusercontent.com/62593236/101312414-09c42a00-3897-11eb-89af-68685f024f68.png" width="70%"></img> 
+
+<img src="https://user-images.githubusercontent.com/62593236/101312470-2d877000-3897-11eb-9caf-e1343a093111.png" width="20%"></img> 
+
+<img src="https://user-images.githubusercontent.com/62593236/101312521-4d1e9880-3897-11eb-99b7-fd84b7777011.png" width="70%"></img> 
+
+<img src="https://user-images.githubusercontent.com/62593236/101312554-66274980-3897-11eb-8f6c-9cf6a8858fad.png" width="20%"></img> 
+
+<img src="https://user-images.githubusercontent.com/62593236/101312588-7ccda080-3897-11eb-889d-5342ab633848.png" width="50%"></img> 
+
+<img src="https://user-images.githubusercontent.com/62593236/101312636-97a01500-3897-11eb-87e6-d69f6cd1adc1.png" width="50%"></img> 
+
+
 
