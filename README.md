@@ -1053,6 +1053,7 @@ cv2.destroyAllWindows()
 </pre>
 <br>
 
+![image](https://user-images.githubusercontent.com/62593236/101313832-81e01f00-389a-11eb-873d-fdd4b828683e.png)
 
 얼굴 인식 과정(0%이상이면 얼굴 인식  성공).
 
