@@ -911,7 +911,150 @@ cv2.destroyAllWindows()
  ## 13주차 팀 활동 보고서
 
 ### 머신 러닝
+파이캠을 이용해 얼굴인식을 한 뒤 얼굴 데이터를 추출해서 라즈베리파이에 저장
 
+<pre>
+import cv2
+import os
+
+cam = cv2.VideoCapture(0)
+cam.set(3, 640) # set video width
+cam.set(4, 480) # set video height
+face_detector = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
+
+# For each person, enter one numeric face id
+face_id = input('\n enter user id end press <return> ==>  ')
+print("\n [INFO] Initializing face capture. Look the camera and wait ...")
+
+# Initialize individual sampling face count
+count = 0
+while(True):
+    ret, img = cam.read()
+    #img = cv2.flip(img, -1) # flip video image vertically
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    faces = face_detector.detectMultiScale(gray, 1.3, 5)
+    for (x,y,w,h) in faces:
+        cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)     
+        count += 1
+        # Save the captured image into the datasets folder
+        cv2.imwrite("dataset/User." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
+        cv2.imshow('image', img)
+    k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
+    if k == 27:
+        break
+    elif count >= 30: # Take 30 face sample and stop video
+         break
+# Do a bit of cleanup
+print("\n [INFO] Exiting Program and cleanup stuff")
+cam.release()
+cv2.destroyAllWindows()
+</pre>
+<br>
+
+추출해낸 얼굴 데이터(사진)를 통해 얼굴 학습 실행.
+<pre>
+import cv2
+import numpy as np
+from PIL import Image
+import os
+
+# Path for face image database
+path = 'dataset'
+recognizer = cv2.face.LBPHFaceRecognizer_create()
+detector = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml");
+
+# function to get the images and label data
+def getImagesAndLabels(path):
+    imagePaths = [os.path.join(path,f) for f in os.listdir(path)]     
+    faceSamples=[]
+    ids = []
+    for imagePath in imagePaths:
+        PIL_img = Image.open(imagePath).convert('L') # convert it to grayscale
+        img_numpy = np.array(PIL_img,'uint8')
+        id = int(os.path.split(imagePath)[-1].split(".")[1])
+        faces = detector.detectMultiScale(img_numpy)
+        for (x,y,w,h) in faces:
+            faceSamples.append(img_numpy[y:y+h,x:x+w])
+            ids.append(id)
+    return faceSamples,ids
+print ("\n [INFO] Training faces. It will take a few seconds. Wait ...")
+faces,ids = getImagesAndLabels(path)
+recognizer.train(faces, np.array(ids))
+
+# Save the model into trainer/trainer.yml
+recognizer.write('trainer/trainer.yml') # recognizer.save() worked on Mac, but not on Pi
+# Print the numer of faces trained and end program
+print("\n [INFO] {0} faces trained. Exiting Program".format(len(np.unique(ids))))
+</pre>
+<br>
+
+딥 러닝 과정 완료 후 얼굴을 인식해 얼굴 판별 기능을 실행함.
+<pre>
+import cv2
+import numpy as np
+import os
+
+recognizer = cv2.face.LBPHFaceRecognizer_create()
+recognizer.read('trainer/trainer.yml')
+cascadePath = "haarcascades/haarcascade_frontalface_default.xml"
+faceCascade = cv2.CascadeClassifier(cascadePath);
+font = cv2.FONT_HERSHEY_SIMPLEX
+
+#iniciate id counter
+id = 0
+
+# names related to ids: example ==> loze: id=1,  etc
+# 이런식으로 사용자의 이름을 사용자 수만큼 추가해준다.
+names = ['None', 'loze', 'ljy', 'chs', 'ksw']
+
+# Initialize and start realtime video capture
+cam = cv2.VideoCapture(0)
+cam.set(3, 640) # set video widht
+cam.set(4, 480) # set video height
+
+# Define min window size to be recognized as a face
+minW = 0.1*cam.get(3)
+minH = 0.1*cam.get(4)
+
+while True:
+    ret, img =cam.read()
+    img = cv2.flip(img, -1) # Flip vertically
+    gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    
+    faces = faceCascade.detectMultiScale( 
+        gray,
+        scaleFactor = 1.2,
+        minNeighbors = 5,
+        minSize = (int(minW), int(minH)),
+       )
+
+    for(x,y,w,h) in faces:
+        cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
+        id, confidence = recognizer.predict(gray[y:y+h,x:x+w])
+        # Check if confidence is less them 100 ==> "0" is perfect match
+        if (confidence < 100):
+            id = names[id]
+            confidence = "  {0}%".format(round(100 - confidence))
+        else:
+            id = "unknown"
+            confidence = "  {0}%".format(round(100 - confidence))
+        
+        cv2.putText(img, str(id), (x+5,y-5), font, 1, (255,255,255), 2)
+        cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
+    
+    cv2.imshow('camera',img) 
+    k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
+    if k == 27:
+        break
+# Do a bit of cleanup
+print("\n [INFO] Exiting Program and cleanup stuff")
+cam.release()
+cv2.destroyAllWindows()
+</pre>
+<br>
+
+
+얼굴 인식 과정(0%이상이면 얼굴 인식  성공).
 
 ### 어플
 
@@ -928,16 +1071,20 @@ cv2.destroyAllWindows()
 
 현재 
 모터 1은 커피원액으로 설정했으며, 1.4초동안 30ml 추출하도록 설정함.
+
 모터 2는 물로 설정하였으며, 9.6초동안 200ml 추출하도록 설정함.
+
 모터 3은 우유로 설정하였으며, 11.2초동안 200ml 추출하도록 설정함.
+
 모터 4는 시럽으로 설정하였으며,1.2초동안 10ml 추출하도록 설정함.
 
-<img src="https://user-images.githubusercontent.com/62593236/101312135-58bd8f80-3896-11eb-950b-e14c5ff6ce31.png" width="70%"></img> 
+
+<img src="https://user-images.githubusercontent.com/62593236/101312135-58bd8f80-3896-11eb-950b-e14c5ff6ce31.png" width="60%"></img> 
 
 각 모터를 활용하여, 위에서 설정한 초단위를 바탕으로 레시피에 따라 각각의 음료를 제조할 수 있도록 번호를 부여하였음
 하였음
 
-<img src="https://user-images.githubusercontent.com/62593236/101312216-8acef180-3896-11eb-8c74-26f712f7496a.png" width="70%"></img>
+<img src="https://user-images.githubusercontent.com/62593236/101312216-8acef180-3896-11eb-8c74-26f712f7496a.png" width="60%"></img>
 
 정한 번호(이름)을 시리얼 모니터를 실행해 입력했을 때,입력받은 이름의 모터가 작동하며,그에 맞는 음료가 제조됨.
 
