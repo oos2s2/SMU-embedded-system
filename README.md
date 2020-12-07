@@ -908,7 +908,7 @@ cv2.destroyAllWindows()
   <img src="https://user-images.githubusercontent.com/70554317/100569189-a8d5a880-3310-11eb-8f44-e0ed601bc075.png" width="50%"></img> 
  
  
- ## 13주차 팀 활동 보고서
+ ## 14주차 팀 활동 보고서
 
 ### 머신 러닝
 파이캠을 이용해 얼굴인식을 한 뒤 얼굴 데이터를 추출해서 라즈베리파이에 저장함
