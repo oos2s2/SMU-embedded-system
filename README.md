@@ -1209,7 +1209,11 @@ public class MainActivity extends AppCompatActivity {
 <br>
 
 라즈베리파이와 안드로이드 사이에 통신할 수 있는 FirebaseCloudMessaging 서비스를 추가함. 
-onNewToken은 새로운 토큰이 생성되는 경우에 실행되며, onMessageReceived은 토큰이 일치해 메세지를 상대 기기로부터 받았을 때 실행됨. 메세지를 받으면 안드로이드 로그창에 라즈베리에 설정해두었던 인증완료 메세지가 생성됨. 그리고 sendNotification로 알림이 올때의 설정들을 추가해두었음.
+onNewToken은 새로운 토큰이 생성되는 경우에 실행되며, onMessageReceived은 토큰이 일치해 메세지를 상대 기기로부터 받았을 때 실행됨. 메세지를 받으면 안드로이드 로그창에 라즈베리에 설정해두었던 인증완료 메세지가 생성됨.
+
+![image](https://user-images.githubusercontent.com/62593236/102034952-9d02df80-3e02-11eb-929f-b1d61b5beefb.png)
+
+그리고 sendNotification로 알림이 올때의 설정들을 추가해두었음.
 
 <pre>
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
