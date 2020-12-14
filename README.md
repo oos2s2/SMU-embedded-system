@@ -1121,7 +1121,8 @@ cv2.destroyAllWindows()
 
 맞음 버튼을 누르고 블루투스 기기를 선택한 뒤 제조시작 버튼을 누르면 음료가 나오며 제조완료 페이지로 넘어간다.
 
-
+<img src="https://user-images.githubusercontent.com/62593236/102027930-b5670000-3dea-11eb-922a-df83b73de973.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102027950-ddeefa00-3dea-11eb-8ae6-064712d125a7.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102027966-0d9e0200-3deb-11eb-83d5-32c769541582.png" width="30%">
+<img src="https://user-images.githubusercontent.com/62593236/102027978-1d1d4b00-3deb-11eb-9e60-7762f8af127a.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102028039-6b324e80-3deb-11eb-8dde-5ac495921969.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102028052-800ee200-3deb-11eb-833b-6dadc1f7b54f.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102028059-8d2bd100-3deb-11eb-8a6d-6115efce7dd1.png" width="30%">
 
 
 
