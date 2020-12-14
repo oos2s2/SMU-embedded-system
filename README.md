@@ -1429,3 +1429,65 @@ public class SuccessActivity extends AppCompatActivity {
 
 ### 기계제조
 
+아두이노 & 드라이버쉴드에 블루투스모듈 연결함
+
+아두이노와 안드로이드 어플이 서로 통신하기 위한 블루투스 모듈을 연결하였다. 이 과정에서 추가적으로 핀헤드와 암수케이블, 그리고 납땜 과정이 필요하였음
+
+2개의 암케이블은 아래 사진과 같이, 핀헤드를 드라이버 쉴드 5V와 GND 핀에 납땜하여 연결할 수 있었고
+
+![image](https://user-images.githubusercontent.com/62593236/102033327-80fd3f00-3dfe-11eb-9503-27785122ea74.png)![image](https://user-images.githubusercontent.com/62593236/102033334-85295c80-3dfe-11eb-80bd-8517fd05e8d6.png)
+
+나머지 2개의 암케이블은 헤더를 자르고 피복을 벗겨 드라이버쉴드 2,3번 핀에 아래 사진과 같이 직접 납땜하여 연결하였음
+
+![image](https://user-images.githubusercontent.com/62593236/102033339-88244d00-3dfe-11eb-87d2-6d5dc35bc85d.png)
+
+4개의 암케이블을 준비하여 블루투스 모듈, 암케이블, 드라이버 쉴드순으로 연결하였음
+RX-갈색-3번핀 , TX-검은색-2번핀, GND-빨간색-GND, VCC-주황색-5V
+
+![image](https://user-images.githubusercontent.com/62593236/102033344-8c506a80-3dfe-11eb-875f-013deb1e5c2a.png)
+
+코드수정 및 테스트, 
+
+모터가 가동할 수 있도록 작성해두었던 코드에서, 블루투스 연결을 할 수 있도록 코드를 추가하고 수정하였음
+
+먼저 아두이노에 블루투스 연결을 확인하기 위한 테스트 코드를 아래와 같이 작성하였고
+
+![image](https://user-images.githubusercontent.com/62593236/102033349-8fe3f180-3dfe-11eb-9b4f-841463054946.png)
+
+시리얼 모니터에 연결을 확인하기 위해 “AT"를 입력하였음
+
+![image](https://user-images.githubusercontent.com/62593236/102033359-93777880-3dfe-11eb-926d-74e8b5941c46.png)
+
+아래와 같이 OK 가 출력되는 것을 확인하여, 블루투스 연결이 성공한 것을 알 수 있었음
+
+![image](https://user-images.githubusercontent.com/62593236/102033363-97a39600-3dfe-11eb-8f54-e9d8e6ffd3e8.png)
+
+따라서, 모터를 작동시킬 수 있는 코드에 블루투스 연결을 할 수 있도록 코드즐 추가, 수정하였음
+
+![image](https://user-images.githubusercontent.com/62593236/102033366-9b371d00-3dfe-11eb-8ea3-7da67140b6ce.png)
+![image](https://user-images.githubusercontent.com/62593236/102033370-9e320d80-3dfe-11eb-9474-95b88dba8d23.png)
+![image](https://user-images.githubusercontent.com/62593236/102033373-a1c59480-3dfe-11eb-8d79-af4281550198.png)
+
+어플과 연결한 후 어플의 값이 아두이노로 전달이되어 음료가 추출되면, 
+아두이노의 시리얼 모니터에는 다음과 같이 어떤음료가 추출되는지 표시됨
+
+![image](https://user-images.githubusercontent.com/62593236/102033378-a4c08500-3dfe-11eb-8e40-6de3eab8a0c7.png)
+
+기계셋팅 및 조립 
+
+앞면, 호스밑에 컵을 놓을 수 있도록 조립
+
+![image](https://user-images.githubusercontent.com/62593236/102033388-a8eca280-3dfe-11eb-965a-b09fa9e19384.png)
+
+뒷면, 음료 재료들과 펌프, 블루투스 모듈과 드라이버 쉴드가 연결된 아두이노, 파이캠이 연결된 라즈베리파이를 부착하여 기기 앞면에서 얼굴을 인식할 수 있도록 함
+
+![image](https://user-images.githubusercontent.com/62593236/102033395-adb15680-3dfe-11eb-888c-ea50433918b8.png)
+
+추출 후 뒷면을 확인하였을 때 줄어든 재료의 양을 확인할 수 있음
+
+![image](https://user-images.githubusercontent.com/62593236/102033406-b144dd80-3dfe-11eb-94c6-c116a17b5c5f.png)
+
+아메리카노, 카페라떼, 바닐라라떼 순으로 추출
+
+![image](https://user-images.githubusercontent.com/62593236/102033411-b4d86480-3dfe-11eb-807a-03d85853fdc0.png)![image](https://user-images.githubusercontent.com/62593236/102033413-b7d35500-3dfe-11eb-9179-4404eafd74cd.png)![image](https://user-images.githubusercontent.com/62593236/102033421-bc980900-3dfe-11eb-88bb-1f6d1d4189cc.png)
+
