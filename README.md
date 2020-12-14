@@ -1101,7 +1101,15 @@ cv2.destroyAllWindows()
 
 <img src="https://user-images.githubusercontent.com/62593236/101312636-97a01500-3897-11eb-87e6-d69f6cd1adc1.png" width="50%"></img> 
 
+
+
+
+
 ### 15주차 최종보고서
+
+## 팀장 : 이채린
+## 팀원 : 강정연, 이예림, 임진선, 김현승
+
 
 ### 머신러닝
 
