@@ -1105,27 +1105,324 @@ cv2.destroyAllWindows()
 
 ### 머신러닝
 
+14주차에서 작성한 얼굴 인식 코드에서 얼굴이 인식되는 부분(%가 0이 넘을 때)에 
+
+어플 및 안드로이드 스튜디오에서 API키와 토큰을 받아와 알림이 전송되는 코드를 작성함
+
+
+<pre>
+import time
+from pyfcm import FCMNotification
+
+push_service = FCMNotification(api_key="Your_API_KEY")
+
+mToken = "Your App Token"
+nth = 0
+
+def sendMessage(p):
+
+    global nth
+    nth += 1
+    registration_id = mToken
+
+    data_message = {
+        "body" : "회원 인증에 성공하였습니다."
+    }
+    
+    result = push_service.single_device_data_message(registration_id=registration_id,      data_message=data_message)
+    print(result)
+
+def _main():
+    
+    while True:
+        sendMessage(80)
+        time.sleep(60 * 1)
+
+if __name__ == "__main__":
+	_main()
+
+</pre>
+<br>
+
+위 코드를 넣어준 뒤 얼굴 인식이 완료 되었을 때 알림 메시지 전송이 완료되었다고 나옴.
+
+위와 같은 메시지에서 success가 뜨면 제대로 된 알림 전송이 완료된 것.
+
+결과물 동작 전에 라즈베리파이에서 설정 내용 - https://youtu.be/CroAQbJxWLI
+
+라즈베리파이 동작 영상 - https://youtu.be/uSz6iAdj3FM
+
+
+
 ### 어플
 
 어플 실행시 로딩화면이 몇 초간 떴다가 메인화면이 뜸 
 
 이 어플을 사용하기 위해서는 등록되어있는 사용자 인증이 필요함
 
-메인화면이 켜짐과 동시에 안드로이드 로그창에 기기의 token을 읽어온다
+메인화면이 켜짐과 동시에 안드로이드 로그창에 기기의 token을 읽어옴
 
-라즈베리파이에 등록해놓은 앱 token과 일치하면 얼굴인식을 진행해 등록되어있는 얼굴데이터와 비교과정을 거친다.
+라즈베리파이에 등록해놓은 앱 token과 일치하면 얼굴인식을 진행해 등록되어있는 얼굴데이터와 비교과정을 거침
 
-얼굴인식에 성공하면 어플사용자 인증이 완료된 것으로, 인증이 완료됨과 동시에 메뉴를 선택할 수 있는 화면으로 전환된다.
+얼굴인식에 성공하면 어플사용자 인증이 완료된 것으로, 인증이 완료됨과 동시에 메뉴를 선택할 수 있는 화면으로 전환됨
 
-메뉴를 선택하면 기기와 기계를 연결하기 위해 블루투스 통신하는 화면으로 넘어간다.
+메뉴를 선택하면 기기와 기계를 연결하기 위해 블루투스 통신하는 화면으로 넘어감
 
-맞음 버튼을 누르고 블루투스 기기를 선택한 뒤 제조시작 버튼을 누르면 음료가 나오며 제조완료 페이지로 넘어간다.
+맞음 버튼을 누르고 블루투스 기기를 선택한 뒤 제조시작 버튼을 누르면 음료가 나오며 제조완료 페이지로 넘어감
 
 <img src="https://user-images.githubusercontent.com/62593236/102027930-b5670000-3dea-11eb-922a-df83b73de973.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102027950-ddeefa00-3dea-11eb-8ae6-064712d125a7.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102027966-0d9e0200-3deb-11eb-83d5-32c769541582.png" width="30%">
-<img src="https://user-images.githubusercontent.com/62593236/102027978-1d1d4b00-3deb-11eb-9e60-7762f8af127a.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102028039-6b324e80-3deb-11eb-8dde-5ac495921969.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102028052-800ee200-3deb-11eb-833b-6dadc1f7b54f.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102028059-8d2bd100-3deb-11eb-8a6d-6115efce7dd1.png" width="30%">
+<img src="https://user-images.githubusercontent.com/62593236/102027978-1d1d4b00-3deb-11eb-9e60-7762f8af127a.png" width="25%"><img src="https://user-images.githubusercontent.com/62593236/102028039-6b324e80-3deb-11eb-8dde-5ac495921969.png" width="25%"><img src="https://user-images.githubusercontent.com/62593236/102028052-800ee200-3deb-11eb-833b-6dadc1f7b54f.png" width="25%"><img src="https://user-images.githubusercontent.com/62593236/102028059-8d2bd100-3deb-11eb-8a6d-6115efce7dd1.png" width="25%">
+
+<pre>
+public class MainActivity extends AppCompatActivity {
+
+    @NotNull
+    private final String TAG = "MainActivity";
+    @NotNull
+    public final String getTAG() {
+        return this.TAG;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+                        String token = task.getResult();
+                        Log.d(TAG, token);
+                    }
+                });
+    }
+}
+</pre>
+<br>
+
+<pre>
+public class MyFirebaseMessagingService extends FirebaseMessagingService {
+    private static final int FLAG_ACTIVITY_NEW_TASK =  0x10000000;
+    @NotNull
+    private final String TAG = "Service";
+
+    @NotNull
+    public final String getTAG() {
+        return this.TAG;
+    }
+
+    @Override
+    public void onNewToken(String s) {
+        super.onNewToken(s);
+        Log.d("NEW_TOKEN",s);
+    }
+    @Override
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        Log.d(this.TAG, "From: " + remoteMessage.getFrom());
+        Log.d(this.TAG, String.valueOf(remoteMessage.getData().get("body")));
+        this.sendNotification(remoteMessage);
+
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent.addFlags(FLAG_ACTIVITY_NEW_TASK));
+        
+    }
+    private final void sendNotification(RemoteMessage remoteMessage) {
+        Intent intent = new Intent((Context)this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity((Context)this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setAutoCancel(true)
+                .setSound(defaultSoundUri)
+                .setContentText(remoteMessage.getData().get("body"))
+                .setContentIntent(pendingIntent);
+        
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0,notificationBuilder.build());
+        
+    }
+}
+</pre>
+<br>
+
+<pre>
+public class MenuActivity extends AppCompatActivity {
+
+    private Button btn1;
+    private Button btn2;
+    private Button btn4;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
+        btn1 = findViewById(R.id.btn_Americano);
+        btn2 = findViewById(R.id.btn_Vanilla_Latte);
+        btn4 = findViewById(R.id.btn_Cafe_Latte);
 
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MenuActivity.this , ArduinoActivity.class);
+                startActivity(intent1);
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MenuActivity.this , arduinoActivity3.class);
+                startActivity(intent1);
+            }
+        });
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MenuActivity.this , ArduinoActivity2.class);
+                startActivity(intent1);
+            }
+        });
+    }
+}
+</pre>
+<br>
 
+<pre>
+public class ArduinoActivity extends AppCompatActivity {
+
+    private BluetoothSPP bt;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_arduino);
+        bt = new BluetoothSPP(this);
+
+
+        if (!bt.isBluetoothAvailable()) {
+            Toast.makeText(getApplicationContext()
+                    , "Bluetooth is not available"
+                    , Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
+        bt.setOnDataReceivedListener(new BluetoothSPP.OnDataReceivedListener() {
+            public void onDataReceived(byte[] data, String message) {
+                Toast.makeText(ArduinoActivity.this, message, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        bt.setBluetoothConnectionListener(new BluetoothSPP.BluetoothConnectionListener() {
+            public void onDeviceConnected(String name, String address) {
+                    Toast.makeText(getApplicationContext()
+                        , "제조시작 버튼을 눌러주세요 !"
+                        , Toast.LENGTH_SHORT).show();
+            }
+
+            public void onDeviceDisconnected() {
+                Toast.makeText(getApplicationContext()
+                        , "Connection lost", Toast.LENGTH_SHORT).show();
+            }
+
+            public void onDeviceConnectionFailed() {
+                Toast.makeText(getApplicationContext()
+                        , "연결에 실패하였습니다ㅠㅠ", Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button btnConnect = findViewById(R.id.btnConnect);
+        btnConnect.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (bt.getServiceState() == BluetoothState.STATE_CONNECTED) {
+                    bt.disconnect();
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), DeviceList.class);
+                    startActivityForResult(intent, BluetoothState.REQUEST_CONNECT_DEVICE);
+                }
+            }
+        });
+    }
+    public void onDestroy() {
+        super.onDestroy();
+        bt.stopService();
+    }
+    public void onStart() {
+        super.onStart();
+        if (!bt.isBluetoothEnabled()) {
+            Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(intent, BluetoothState.REQUEST_ENABLE_BT);
+        } else {
+            if (!bt.isServiceAvailable()) {
+                bt.setupService();
+                bt.startService(BluetoothState.DEVICE_OTHER);
+                setup();
+            }
+        }
+    }
+    public void setup() {
+        Button btnSend = findViewById(R.id.btnSend);
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                bt.send("1", true);
+
+                Intent intent = new Intent(ArduinoActivity.this, SuccessActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == BluetoothState.REQUEST_CONNECT_DEVICE) {
+            if (resultCode == Activity.RESULT_OK)
+                bt.connect(data);
+        } else if (requestCode == BluetoothState.REQUEST_ENABLE_BT) {
+            if (resultCode == Activity.RESULT_OK) {
+                bt.setupService();
+                bt.startService(BluetoothState.DEVICE_OTHER);
+                setup();
+            } else {
+                Toast.makeText(getApplicationContext()
+                        , "Bluetooth was not enabled."
+                        , Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }
+    }
+}
+</pre>
+<br>
+
+<pre>
+public class SuccessActivity extends AppCompatActivity {
+
+    private Button back;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_success);
+
+        back = findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(SuccessActivity.this , MainActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+    }
+
+}
+</pre>
+<br>
 
 
 ### 기계제조
