@@ -1146,6 +1146,8 @@ if __name__ == "__main__":
 
 위 코드를 넣어준 뒤 얼굴 인식이 완료 되었을 때 알림 메시지 전송이 완료되었다고 나옴.
 
+![image](https://user-images.githubusercontent.com/62593236/102030358-e00a8600-3df5-11eb-9688-0da209801029.png)
+
 위와 같은 메시지에서 success가 뜨면 제대로 된 알림 전송이 완료된 것.
 
 결과물 동작 전에 라즈베리파이에서 설정 내용 - https://youtu.be/CroAQbJxWLI
