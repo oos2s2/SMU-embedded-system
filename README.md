@@ -1175,6 +1175,7 @@ if __name__ == "__main__":
 <img src="https://user-images.githubusercontent.com/62593236/102027930-b5670000-3dea-11eb-922a-df83b73de973.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102027950-ddeefa00-3dea-11eb-8ae6-064712d125a7.png" width="30%"><img src="https://user-images.githubusercontent.com/62593236/102027966-0d9e0200-3deb-11eb-83d5-32c769541582.png" width="30%">
 <img src="https://user-images.githubusercontent.com/62593236/102027978-1d1d4b00-3deb-11eb-9e60-7762f8af127a.png" width="25%"><img src="https://user-images.githubusercontent.com/62593236/102028039-6b324e80-3deb-11eb-8dde-5ac495921969.png" width="25%"><img src="https://user-images.githubusercontent.com/62593236/102028052-800ee200-3deb-11eb-833b-6dadc1f7b54f.png" width="25%"><img src="https://user-images.githubusercontent.com/62593236/102028059-8d2bd100-3deb-11eb-8a6d-6115efce7dd1.png" width="25%">
 
+MainActivity에서는 얼굴인식을 바로 실행하기 위해 현재 등록되어있는 토큰을 읽어오는 메소드를 실행시킴
 <pre>
 public class MainActivity extends AppCompatActivity {
 
@@ -1206,6 +1207,9 @@ public class MainActivity extends AppCompatActivity {
 }
 </pre>
 <br>
+
+라즈베리파이와 안드로이드 사이에 통신할 수 있는 FirebaseCloudMessaging 서비스를 추가함. 
+onNewToken은 새로운 토큰이 생성되는 경우에 실행되며, onMessageReceived은 토큰이 일치해 메세지를 상대 기기로부터 받았을 때 실행됨. 메세지를 받으면 안드로이드 로그창에 라즈베리에 설정해두었던 인증완료 메세지가 생성됨. 그리고 sendNotification로 알림이 올때의 설정들을 추가해두었음.
 
 <pre>
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
@@ -1253,6 +1257,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 </pre>
 <br>
 
+MenuActivity에서는 각 메뉴를 클릭하면 액티비티가 이동할 수 있게 설정해두었음.
 <pre>
 public class MenuActivity extends AppCompatActivity {
 
@@ -1294,6 +1299,10 @@ public class MenuActivity extends AppCompatActivity {
 }
 </pre>
 <br>
+
+ArduinoActivity는 안드로이드와 아두이노 블루투스 모듈을 연결시키는 액티비티임. 
+setBluetoothConnectionListener를 통해 btnConnect 버튼을 누르면 블루투스 기기를 선택하여 연결할 수 있고, 연결되면 음료제조를 시작해도 좋다는 토스트메세지를 띄움. 
+ 연결이 됐으면 setup()메소드를 통해 아두이노 시리얼 모니터에 data를 전송함. onActivityResult는 현재 액티비티의 반환 액티비티로, 연결 가능한 디바이스와 연결 시도 후 연결에 성공하면 데이터를 전송하고, 보내지 못함을 의미함.
 
 <pre>
 public class ArduinoActivity extends AppCompatActivity {
